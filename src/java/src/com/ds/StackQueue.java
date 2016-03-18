@@ -90,8 +90,8 @@ class QueueMin {
 				break;
 			}
 		}
-		while(i-- > 0) { //If we have got new min, then the entire queue is replace with this min
-			minQueue.add(element);
+		while(i-- > 0) { //If we have got new min, then the entire queue is replaced with this min
+			//minQueue.add(element);
 		}
 		
 		minQueue.add(element);
@@ -99,7 +99,8 @@ class QueueMin {
 
 	public int remove() {
 		int ret = mainQueue.remove();
-		minQueue.remove();
+		if(minQueue.peek() == ret)	
+			minQueue.remove();
 		return ret;
 	}
 	
