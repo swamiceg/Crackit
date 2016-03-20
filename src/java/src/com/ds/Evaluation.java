@@ -236,6 +236,17 @@ public class Evaluation {
 			System.out.printf("%d --> %d\n", stack.pop(), -1);
 		}
 	}
+	
+	//Check if the number is a power of provided 'power'
+	public boolean checkPower(int number, int power) {
+		if(number == power)
+			return true;
+		else if(number < power) {
+			return false;
+		} else {
+			return checkPower(number/power + (number%power), power);
+		}
+	}  
 
 	public static void main(String[] args) {
 		Evaluation eval = new Evaluation();
@@ -250,5 +261,7 @@ public class Evaluation {
 		
 		eval.printGreatestOnRight(new int[]{4, 5, 2, 25});
 		eval.printGreatestOnRight(new int[]{5, 4, 3, 2, 1});
+		
+		System.out.println("IsPower(): " + eval.checkPower(126, 5));
 	}
 }

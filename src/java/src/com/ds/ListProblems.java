@@ -89,7 +89,8 @@ public class ListProblems {
 		list.add(new Node(4));
 		list.add(new Node(5));
 		list.add(new Node(6));
-		
+		list.display();
+		System.out.println();
 		temp = rotateByNumber(list.getRoot(), 2);
 		print(temp);
 		
